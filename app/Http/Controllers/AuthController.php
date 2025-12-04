@@ -31,8 +31,7 @@ class AuthController extends Controller
     {
         try {
             $credentials = $request->validated();
-            $user = new User($credentials);
-            $user->save();
+            $user = User::create($credentials);
 
             Auth::login($user);
 
